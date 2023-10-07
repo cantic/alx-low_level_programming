@@ -1,45 +1,25 @@
 #include <stdio.h>
 /**
- * main - print numbers in 3s separaed by , and space
+ * main - print alpha in caps and low case
  *
  * Return: (0)
  *
  */
 int main(void)
 {
-	int num1, num2, num3;
+	char Lower = 'a';
+	char Upper = 'A';
 
-	num1 = '0';
-	num2 = '0';
-	num3 = '0';
-
-	while (num1 <= '9')
+	while (Lower <= 'z')
 	{
-		while (num2 <= '9')
-		{
-			num3 = '0';
-			while (num3 <= '9')
-			{
-				if (num1 < num2 && num2 < num3)
-				{
-					putchar(num1);
-					putchar(num2);
-					putchar(num3);
-
-					if (num1 != '7')
-					{
-						putchar(',');
-						putchar(' ');
-					}
-				}
-				num3++;
-			}
-			num2++;
-		}
-		num1++;
-		num2 = '0';
+		putchar(Lower);
+		Lower++;
+	}
+	while (Upper <= 'Z')
+	{
+		putchar(Upper);
+		Upper++;
 	}
 	putchar('\n');
-
 	return (0);
 }
