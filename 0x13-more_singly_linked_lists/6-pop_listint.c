@@ -1,20 +1,20 @@
 #include "lists.h"
 /**
- * print_listint - print the int data in a singly linked list
- *
- * @h: the head pointer to the list
- * Return: The number of nodes in the list
+ * pop_listint - delete the first node of a list and return
+ * its data
+ * @head: the pointer to the list
+ * Return: int
  */
-size_t print_listint(const listint_t *h)
+int pop_listint(listint_t **head)
 {
-	size_t count;
+	int n;
+	listint_t *tmp;
 
-	if (h == NULL)
+	if (head == NULL || *head == NULL)
 		return (0);
-	for (count = 0; h != NULL; count++)
-	{
-		printf("%d\n", h->n);
-		h = h->next;
-	}
-	return (count);
+	n = (*head)->n;
+	tmp = *head;
+	*head = (*head)->next;
+	free(tmp);
+	return (n);
 }
